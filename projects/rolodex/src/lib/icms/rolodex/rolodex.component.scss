@@ -1,0 +1,32 @@
+
+img.ItemImage {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: block;
+}
+
+.ColortuneTile {
+  //width: 100%;
+  //margin-bottom: .3em;
+
+  display: block;
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  border: 1px solid black;
+  //line-height: 196px;
+  //font-size: 120px;
+  font-weight: bold;
+  color: #e81111;
+  text-align: center;
+  background-color: #9fcdff;
+}
+
+div {
+  perspective: 2000px;
+  transform-style: preserve-3d;  // Ensure children's 3D transforms are visible
+}
+

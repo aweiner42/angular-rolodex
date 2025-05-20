@@ -1,0 +1,50 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "rolodex": {
+      "projectType": "library",
+      "root": "projects/rolodex",
+      "sourceRoot": "projects/rolodex/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rolodex/tsconfig.lib.json",
+            "project": "projects/rolodex/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rolodex/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rolodex/src/test.ts",
+            "tsConfig": "projects/rolodex/tsconfig.spec.json",
+            "karmaConfig": "projects/rolodex/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rolodex/tsconfig.lib.json",
+              "projects/rolodex/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": "ed4bc866-2e66-460e-9b2e-f459dd30c24b"
+  },
+  "defaultProject": "rolodex"
+}

@@ -1,0 +1,21 @@
+<div class="rolodex" id="rolodex" >
+  <div *ngFor="let aItem of theItems; let i = index">
+    <a class="btn btn-default ColortuneTile"
+       [style]="getRolodexCardStyle(i)"
+       href="{{aItem.webReference}}">
+      <img class="ItemImage" src="{{aItem.iconURL}}">
+      {{aItem.name}}
+    </a>
+  </div>
+
+  <span *ngIf="rolodexDebugger">
+    <span>offset={{offset}}</span>
+    <span>velocity={{velocity}}</span>
+    <span>force={{force}}</span>
+    <span>forceTouch={{forceTouch}}</span>
+    <span>forceTouchVelocity={{forceTouchVelocity}}</span>
+    <span data-ng-hide="touched">Drag and Tap</span>
+    <span data-ng-show="touched">-----xx-----</span>
+  </span>
+
+</div>
